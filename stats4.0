@@ -1,0 +1,33 @@
+clc;clear;clf();
+k=1.38e-23;Na=6.022e23;
+Elmnt=["Nitrogen";"Oxygen";"Flourine";"Neon"]
+m1=[28;32;19;20]
+m=m1/(Na*1000);
+T=400:400:1600;
+v=0:2:2000;
+style=['k-d';'k-o';'k-x';'k-']
+subplot(1,2,1)
+for i=1:length(T)
+    for j=1:length(v)
+    P(i,j)= 4*%pi*(v(j)^2)((m(1)/(2*%pi*k*T(i)))^1.5)*exp(-0.5*m(1)*(v(j)^2)/(k*T(i)))
+    end
+     plot(v(1:10:$),P(i,1:10:$),style(i),'linewidth',2)
+     l(i)=["T="+string(T(i))]
+end
+xlabel("velocity(v)",'fontsize', 5)
+ylabel("P(v)",'fontsize',2)
+title ("maxwell velocity distribution for"+element(1)+"(mol mass="+string(ml(1))+"g/mol)",'fontsize',4)
+L= legend(l)
+subplot(1,2,2)
+for i= 1:length(m)
+    for j=1:length(v)
+        P(i,j)= 4*%pi*(v(j)^2)((m(1)/(2*%pi*k*T(1)))^1.5)*exp(-0.5*m(1)(v(j)^2)/(k*T(1)))
+        end
+        plot(v(1:10:$),P(i,1:10:$),style(i),'linewidth',2)
+        l(i)=["Element:"+element(i)+",mol mass="+string(ml(i))+"g/mol"]
+end
+title("maxwell velocity distribution for T="+string(T(1))+"k",'fontsize',6)
+xlabel("velocity(v)",'fontsize', 5)
+ylabel("P(v)",'fontsize',2)
+L=legend(1)
+L.font_size=3
