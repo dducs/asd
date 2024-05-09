@@ -1,37 +1,21 @@
-clc
-clear
-clf
-//for relativistic fermions
-e=1.6e-19
-kb=1.38e-23
-h=6.626e-34
-s=0.5
-c=3*10^8
-u=1
-v=1
-E=0:0.001:2// in Mev
-T=[10^8 10^9]
-c1=(2*s*4*3.14*v)/((h^3)*(c^3))
-for j=1:length(T)
- b=1/(kb*T(j))
- for i=1:length(E)
- g(i)=c1*(E(i))^2
- n(j,i)=1/(exp((E(i)-u)*10^6*e*b)+1)
- f(j,i)=g(i)*n(j,i)
-end
-end
-subplot(1,3,1)
-plot(E',g)
-ylabel('g(E)')
-xlabel('Energy(MeV)')
-subplot(1,3,2)
-plot(E',n')
-legend(string(T)+'K')
-ylabel('n(E)')
-xlabel('Energy(MeV)')
-title('relativistic fermions')
-subplot(1,3,3)
-plot(E',f')
-legend(string(T)+'K')
-ylabel('dN/dE')
-xlabel('Energy(MeV)')
+ NET "LED[0]"             LOC = P46   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[1]"             LOC = P47   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[2]"             LOC = P48   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[3]"             LOC = P49   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[4]"             LOC = P50   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[5]"             LOC = P51   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[6]"             LOC = P54   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "LED[7]"             LOC = P55   | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+
+####################################################################################################
+#                                   DP Switches
+####################################################################################################
+
+    NET "DPSwitch[0]"        LOC = P70   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[1]"        LOC = P69   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[2]"        LOC = P68   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[3]"        LOC = P64   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[4]"        LOC = P63   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[5]"        LOC = P60   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[6]"        LOC = P59   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
+    NET "DPSwitch[7]"        LOC = P58   | PULLUP  | IOSTANDARD = LVCMOS33 | SLEW = SLOW | DRIVE = 12;
